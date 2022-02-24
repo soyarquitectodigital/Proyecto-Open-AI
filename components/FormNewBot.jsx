@@ -21,10 +21,10 @@ export default function FormNewBot() {
                                 <input type="text" placeholder="Nombre del Bot" className="form-control" />
                             </div>
                         </div>
-                        <div class="row mb-3">
+                        <div className="row mb-3">
 
-                            <div class="col-sm-12">
-                                <textarea class="form-control" placeholder="Descripción..."></textarea>
+                            <div className="col-sm-12">
+                                <textarea className="form-control" placeholder="Descripción..."></textarea>
                             </div>
                         </div>
                         <div className="row mb-3">
@@ -47,17 +47,17 @@ export default function FormNewBot() {
                         <h5 className="card-title">Selecciona los tweets a publicar</h5>
                         <p className="card-text">
                             <div className="row mb-3">
-                                <div class="input-group mb-3">
-                                    <input type="text" class="form-control" placeholder="Ingresa una idea para tus tweets" aria-label="Recipient's username" aria-describedby="button-addon2" />
-                                    <button class="btn btn-outline-primary" type="button" id="button-addon2">Buscar...</button>
+                                <div className="input-group mb-3">
+                                    <input type="text" className="form-control" placeholder="Ingresa una idea para tus tweets" aria-label="Recipient's username" aria-describedby="button-addon2" />
+                                    <button className="btn btn-outline-primary" type="button" id="button-addon2">Buscar...</button>
                                 </div>
                             </div>
 
                             <div className="row mb-3">
                                 <div className="col-sm-12">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="gridCheck1" />
-                                        <label class="form-check-label" for="gridCheck1">
+                                    <div className="form-check">
+                                        <input className="form-check-input" type="checkbox" id="gridCheck1" />
+                                        <label className="form-check-label" htmlFor="gridCheck1">
                                             Example checkbox
                                         </label>
                                     </div>
@@ -65,9 +65,9 @@ export default function FormNewBot() {
                             </div>
                             <div className="row mb-3">
                                 <div className="col-sm-12">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="gridCheck1" />
-                                        <label class="form-check-label" for="gridCheck1">
+                                    <div className="form-check">
+                                        <input className="form-check-input" type="checkbox" id="gridCheck1" />
+                                        <label className="form-check-label" htmlFor="gridCheck1">
                                             Example checkbox
                                         </label>
                                     </div>
@@ -75,9 +75,9 @@ export default function FormNewBot() {
                             </div>
                             <div className="row mb-3">
                                 <div className="col-sm-12">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="gridCheck1" />
-                                        <label class="form-check-label" for="gridCheck1">
+                                    <div className="form-check">
+                                        <input className="form-check-input" type="checkbox" id="gridCheck1" />
+                                        <label className="form-check-label" htmlFor="gridCheck1">
                                             Example checkbox
                                         </label>
                                     </div>
@@ -85,9 +85,9 @@ export default function FormNewBot() {
                             </div>
                             <div className="row mb-3">
                                 <div className="col-sm-12">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="gridCheck1" />
-                                        <label class="form-check-label" for="gridCheck1">
+                                    <div className="form-check">
+                                        <input className="form-check-input" type="checkbox" id="gridCheck1" />
+                                        <label className="form-check-label" htmlFor="gridCheck1">
                                             Example checkbox
                                         </label>
                                     </div>

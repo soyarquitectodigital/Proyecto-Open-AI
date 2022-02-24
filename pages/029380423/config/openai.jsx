@@ -1,9 +1,9 @@
 import React from 'react'
-import FormOpen from '../../components/FormOpen'
-import ListGroup from '../../components/ListGroup'
-import Aside from '../../shared/Aside'
-import Header from '../../shared/Header'
-import PageTitle from '../../shared/PageTitle'
+import FormOpen from '../../../components/FormOpen'
+import ListGroup from '../../../components/ListGroup'
+import Aside from '../../../shared/Aside'
+import Header from '../../../shared/Header'
+import PageTitle from '../../../shared/PageTitle'
 
 export default function openai() {
   return (

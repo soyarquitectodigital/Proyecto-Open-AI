@@ -1,8 +1,8 @@
 import React from 'react'
-import FormNewBot from '../../components/FormNewBot'
-import Aside from '../../shared/Aside'
-import Header from '../../shared/Header'
-import PageTitle from '../../shared/PageTitle'
+import FormNewBot from '../../../components/FormNewBot'
+import Aside from '../../../shared/Aside'
+import Header from '../../../shared/Header'
+import PageTitle from '../../../shared/PageTitle'
 
 export default function newbot() {
   return (

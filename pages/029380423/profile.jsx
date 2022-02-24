@@ -1,9 +1,9 @@
 import React from 'react'
-import CardUser from '../components/CardUser'
-import TabProfile from '../components/TabProfile'
-import Aside from '../shared/Aside'
-import Header from '../shared/Header'
-import PageTitle from '../shared/PageTitle'
+import CardUser from '../../components/CardUser'
+import TabProfile from '../../components/TabProfile'
+import Aside from '../../shared/Aside'
+import Header from '../../shared/Header'
+import PageTitle from '../../shared/PageTitle'
 
 export default function profile() {
   return (

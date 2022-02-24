@@ -1,9 +1,9 @@
 import React from 'react'
-import FormTwitter from '../../components/FormTwitter'
-import ListGroup from '../../components/ListGroup'
-import Aside from '../../shared/Aside'
-import Header from '../../shared/Header'
-import PageTitle from '../../shared/PageTitle'
+import FormTwitter from '../../../components/FormTwitter'
+import ListGroup from '../../../components/ListGroup'
+import Aside from '../../../shared/Aside'
+import Header from '../../../shared/Header'
+import PageTitle from '../../../shared/PageTitle'
 
 export default function twitter() {
   return (

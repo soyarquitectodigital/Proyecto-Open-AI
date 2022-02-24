@@ -1,8 +1,8 @@
 import React from 'react'
-import DataTableUsers from '../components/DataTableUsers'
-import Aside from '../shared/Aside'
-import Header from '../shared/Header'
-import PageTitle from '../shared/PageTitle'
+import DataTableUsers from '../../components/DataTableUsers'
+import Aside from '../../shared/Aside'
+import Header from '../../shared/Header'
+import PageTitle from '../../shared/PageTitle'
 
 export default function users() {
   return (
