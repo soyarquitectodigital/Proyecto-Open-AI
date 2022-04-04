@@ -1,10 +1,14 @@
 import React from 'react'
-import FormNewBot from '../../../components/FormNewBot'
-import Aside from '../../../shared/Aside'
-import Header from '../../../shared/Header'
-import PageTitle from '../../../shared/PageTitle'
+import { requiredAuth } from '../../hooks/authUser'
+import FormNewBot from '../../components/FormNewBot'
+import Aside from '../../shared/Aside'
+import Header from '../../shared/Header'
+import PageTitle from '../../shared/PageTitle'
 
 export default function newbot() {
+
+  requiredAuth()
+
   return (
     <>
       <Header />
@@ -14,12 +18,12 @@ export default function newbot() {
         <PageTitle name="Creación de nuevo Bot" />
         <section className="section">
         <div className="row">
-        <div className="col-lg-4 offset-lg-4">
+        <div className="col-lg-6 offset-lg-3">
           <h3>Registra tu bot...</h3>
         </div>
         </div>
           <div className="row">
-            <div className="col-lg-4 offset-lg-4">
+            <div className="col-lg-6 offset-lg-3">
               <FormNewBot />
             </div>
           </div>

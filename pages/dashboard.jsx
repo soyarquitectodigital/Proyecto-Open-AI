@@ -1,10 +1,14 @@
 import React from 'react'
-import CardDasboard from '../../components/CardDasboard'
-import Aside from '../../shared/Aside'
-import Header from '../../shared/Header'
-import PageTitle from '../../shared/PageTitle'
+import CardDasboard from '../components/CardDasboard'
+import { requiredAuth } from '../hooks/authUser'
+import Aside from '../shared/Aside'
+import Header from '../shared/Header'
+import PageTitle from '../shared/PageTitle'
 
 export default function dashboard() {
+
+    requiredAuth()
+
     return (
         <>
             <Header />

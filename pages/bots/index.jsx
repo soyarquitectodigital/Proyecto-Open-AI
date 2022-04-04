@@ -1,11 +1,15 @@
 import Link from 'next/link'
 import React from 'react'
-import DataTableBots from '../../../components/DataTableBots'
-import Aside from '../../../shared/Aside'
-import Header from '../../../shared/Header'
-import PageTitle from '../../../shared/PageTitle'
+import DataTableBots from '../../components/DataTableBots'
+import { requiredAuth } from '../../hooks/authUser'
+import Aside from '../../shared/Aside'
+import Header from '../../shared/Header'
+import PageTitle from '../../shared/PageTitle'
 
 export default function bots() {
+
+  requiredAuth()
+
   return (
     <>
       <Header />
@@ -29,5 +33,5 @@ export default function bots() {
         </section>
       </main>
     </>
-  )
+  );
 }

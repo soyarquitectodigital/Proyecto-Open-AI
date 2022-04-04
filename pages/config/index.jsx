@@ -1,11 +1,15 @@
 import React from 'react'
-import CardBasic from '../../../components/CardBasic'
-import Aside from '../../../shared/Aside'
-import Header from '../../../shared/Header'
-import PageTitle from '../../../shared/PageTitle'
+import CardBasic from '../../components/CardBasic'
+import Aside from '../../shared/Aside'
+import Header from '../../shared/Header'
+import PageTitle from '../../shared/PageTitle'
 import Link from 'next/link'
+import { requiredAuth } from '../../hooks/authUser'
 
 export default function config() {
+
+    requiredAuth()
+
     return (
         <>
             <Header />

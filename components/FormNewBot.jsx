@@ -1,4 +1,8 @@
+import { useState } from "react";
 import { Form } from "react-bootstrap";
+import { useMutation, useQueryClient } from 'react-query';
+import { getTweets } from "../pages/api/tweetsOpenai";
+
 
 
 
@@ -6,7 +10,30 @@ import { Form } from "react-bootstrap";
 
 export default function FormNewBot() {
 
+    const [prompt, setPrompt] = useState("")
 
+    const queryClient = useQueryClient();
+
+    const { mutate, error, isSuccess, data } = useMutation(getTweets, {
+        onSuccess: () => {
+            queryClient.invalidateQueries(["getTweets"]);
+        },
+    })
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        mutate({ prompt });
+        console.log(prompt);
+        
+    }
+
+    if(isSuccess){
+        const { choices } = data;
+
+      console.log(choices)
+
+
+    }
 
     return (
         <>
@@ -37,6 +64,15 @@ export default function FormNewBot() {
                                 </Form.Select>
                             </div>
                         </div>
+                        <div className="row mb-3">
+                            <div className="col-sm-12">
+                                <Form.Select aria-label="Default select example">
+                                    <option>-- Cuenta a la que se va a publicar --</option>
+                                    <option value="1">Oswaldo Gonzalez</option>
+                                    <option value="2">Emanuel Arias</option>
+                                </Form.Select>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -48,51 +84,12 @@ export default function FormNewBot() {
                         <p className="card-text">
                             <div className="row mb-3">
                                 <div className="input-group mb-3">
-                                    <input type="text" className="form-control" placeholder="Ingresa una idea para tus tweets" aria-label="Recipient's username" aria-describedby="button-addon2" />
-                                    <button className="btn btn-outline-primary" type="button" id="button-addon2">Buscar...</button>
+                                    <input type="text" value={prompt} onChange={(e) => setPrompt(e.target.value)} className="form-control" placeholder="Ingresa una idea para tus tweets" aria-label="Recipient's username" aria-describedby="button-addon2" />
+                                    <button className="btn btn-outline-primary" type="button" id="button-addon2" onClick={handleSubmit}>Buscar...</button>
                                 </div>
                             </div>
 
-                            <div className="row mb-3">
-                                <div className="col-sm-12">
-                                    <div className="form-check">
-                                        <input className="form-check-input" type="checkbox" id="gridCheck1" />
-                                        <label className="form-check-label" htmlFor="gridCheck1">
-                                            Example checkbox
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="row mb-3">
-                                <div className="col-sm-12">
-                                    <div className="form-check">
-                                        <input className="form-check-input" type="checkbox" id="gridCheck1" />
-                                        <label className="form-check-label" htmlFor="gridCheck1">
-                                            Example checkbox
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="row mb-3">
-                                <div className="col-sm-12">
-                                    <div className="form-check">
-                                        <input className="form-check-input" type="checkbox" id="gridCheck1" />
-                                        <label className="form-check-label" htmlFor="gridCheck1">
-                                            Example checkbox
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="row mb-3">
-                                <div className="col-sm-12">
-                                    <div className="form-check">
-                                        <input className="form-check-input" type="checkbox" id="gridCheck1" />
-                                        <label className="form-check-label" htmlFor="gridCheck1">
-                                            Example checkbox
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
+                        
 
                         </p>
                     </div>
@@ -106,7 +103,7 @@ export default function FormNewBot() {
                 <div className="row mb-3">
 
                     <div className="d-grid gap-2 mt-3">
-                        <button type="submit" className="btn btn-primary">Registrar Credenciales</button>
+                        <button type="submit" className="btn btn-primary">Crear</button>
                     </div>
                 </div>
 

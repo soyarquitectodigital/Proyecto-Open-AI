@@ -12,6 +12,7 @@ import React from 'react'
 import { ReactQueryDevtools } from 'react-query/devtools'
 import { Hydrate, QueryClient, QueryClientProvider } from 'react-query'
 import Head from 'next/head';
+import { UserProvider } from '../context/UserContext';
 
 export default function MyApp({ Component, pageProps }) {
   const [queryClient] = React.useState(() => new QueryClient())
@@ -23,9 +24,11 @@ export default function MyApp({ Component, pageProps }) {
       </Head>
       <QueryClientProvider client={queryClient}>
         <Hydrate state={pageProps.dehydratedState}>
+        <UserProvider>
         <SSRProvider>
         <Component {...pageProps} />
         </SSRProvider>
+        </UserProvider>
         </Hydrate>
         <ReactQueryDevtools initialIsOpen={false} />
       </QueryClientProvider>

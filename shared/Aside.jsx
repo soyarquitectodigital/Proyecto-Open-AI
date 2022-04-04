@@ -43,6 +43,14 @@ export default function Aside() {
                             </a>
                         </Link>
                     </li>
+                    <li className="nav-item">
+                        <Link href="/profile">
+                            <a className="nav-link collapsed">
+                                <i className="bi bi-arrow-down-right-circle-fill"></i>
+                                <span>Mi Perfil</span>
+                            </a>
+                        </Link>
+                    </li>
                 </ul>
             </aside>
         </>

@@ -1,11 +1,18 @@
+import { useRouter } from 'next/router'
 import React from 'react'
-import FormOpen from '../../../components/FormOpen'
-import ListGroup from '../../../components/ListGroup'
-import Aside from '../../../shared/Aside'
-import Header from '../../../shared/Header'
-import PageTitle from '../../../shared/PageTitle'
+import FormOpen from '../../components/FormOpen'
+import ListGroup from '../../components/ListGroup'
+import { requiredAuth } from '../../hooks/authUser'
+import Aside from '../../shared/Aside'
+import Header from '../../shared/Header'
+import PageTitle from '../../shared/PageTitle'
 
 export default function openai() {
+
+    requiredAuth()
+
+    const router = useRouter()
+
   return (
     <>
         <Header />

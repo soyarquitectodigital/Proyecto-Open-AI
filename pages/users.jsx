@@ -1,10 +1,14 @@
 import React from 'react'
-import DataTableUsers from '../../components/DataTableUsers'
-import Aside from '../../shared/Aside'
-import Header from '../../shared/Header'
-import PageTitle from '../../shared/PageTitle'
+import DataTableUsers from '../components/DataTableUsers'
+import Aside from '../shared/Aside'
+import Header from '../shared/Header'
+import PageTitle from '../shared/PageTitle'
+import { requiredAuth } from '../hooks/authUser'
 
 export default function users() {
+
+  requiredAuth()
+
   return (
     <>
       <Header />
