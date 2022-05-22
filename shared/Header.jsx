@@ -45,8 +45,6 @@ export default function header() {
 
                         <button className="btn btn-danger" onClick={handleLogout}>Salir</button>
 
-                        
-
                         </li>
 
                     </ul>

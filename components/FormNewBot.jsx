@@ -4,11 +4,9 @@ import { useMutation, useQueryClient } from 'react-query';
 import { getTweets } from "../pages/api/tweetsOpenai";
 
 
-
-
-
-
 export default function FormNewBot() {
+
+    let flag = 0
 
     const [prompt, setPrompt] = useState("")
 
@@ -24,21 +22,23 @@ export default function FormNewBot() {
         e.preventDefault();
         mutate({ prompt });
         console.log(prompt);
-        
+
     }
 
-    if(isSuccess){
+    if (isSuccess) {
         const { choices } = data;
+        const texto = choices[0].text.toString();
 
-      console.log(choices)
+        const split = texto.split('\n\n')
+        console.log("Este es el texto: " + texto)
 
-
+        const token = split[3] // (2) token
+        console.log(token)
     }
 
     return (
         <>
             <form>
-
                 <div className="card">
                     <div className="card-body">
                         <h5 className="card-title">Datos del Bot</h5>
@@ -75,12 +75,9 @@ export default function FormNewBot() {
                         </div>
                     </div>
                 </div>
-
-
-
                 <div className="card">
                     <div className="card-body">
-                        <h5 className="card-title">Selecciona los tweets a publicar</h5>
+                        <h5 className="card-title">Indicanos tu idea para los tweets</h5>
                         <p className="card-text">
                             <div className="row mb-3">
                                 <div className="input-group mb-3">
@@ -88,25 +85,52 @@ export default function FormNewBot() {
                                     <button className="btn btn-outline-primary" type="button" id="button-addon2" onClick={handleSubmit}>Buscar...</button>
                                 </div>
                             </div>
-
-                        
-
                         </p>
                     </div>
                 </div>
 
-                <div className="row mb-3">
+                <div className="card">
+                    <div className="card-body">
+                        <h5 className="card-title">Selecciona los tweets a publicar</h5>
+                        <p className="card-text">
+                            <div className="row ">
+                                {!!split && split.map((tweet) => (
+                                    <>
+                                    <div className="input-group">
 
 
+
+                                       
+
+                                           
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-text">
+                                                    <input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input" />
+                                                </div>
+                                                <input type="text" class="form-control" value={tweet} aria-label="Text input with checkbox" />
+                                            </div>
+
+
+
+                                        
+
+
+
+                                    </div>
+                                    </>
+                                ))}
+                            </div>
+                        </p>
+                    </div>
                 </div>
 
-                <div className="row mb-3">
+                <div className="row mb-3"></div>
 
+                <div className="row mb-3">
                     <div className="d-grid gap-2 mt-3">
                         <button type="submit" className="btn btn-primary">Crear</button>
                     </div>
                 </div>
-
             </form>
 
         </>
